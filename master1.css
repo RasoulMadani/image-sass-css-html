@@ -1,0 +1,88 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery {
+  width: 300px;
+  height: 400px;
+  margin: 100px auto;
+  position: relative;
+}
+.gallery::after {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 10px solid rgba(0, 0, 0, 0.239);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.gallery > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery > .secondBorder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  position: absolute;
+  border: 0px solid rgba(0, 0, 0, 0.364);
+}
+.gallery:hover > .secondBorder {
+  border: 25px solid rgba(0, 0, 0, 0.364);
+}
+.gallery:hover > span:first-of-type {
+  left: 30%;
+  top: 40%;
+  opacity: 1;
+}
+.gallery:hover > span:last-of-type {
+  right: 30%;
+  bottom: 40%;
+  opacity: 1;
+}
+.gallery > span {
+  display: flex;
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.346);
+  opacity: 0;
+  transition: 1s;
+}
+.gallery > span:first-of-type {
+  left: 10%;
+  top: 30%;
+}
+.gallery > span:last-of-type {
+  right: 10%;
+  bottom: 30%;
+}
+.gallery > figcaption {
+  width: 100%;
+  height: 70px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: 10px;
+  z-index: 999;
+  color: white;
+  opacity: 0;
+  transition: 0.3s;
+  transition-delay: 1s;
+}
+.gallery:hover > figcaption {
+  opacity: 1;
+}/*# sourceMappingURL=master1.css.map */
